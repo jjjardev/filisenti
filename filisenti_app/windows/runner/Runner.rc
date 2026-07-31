@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "filisenti_app" "\0"
+            VALUE "FileDescription", "FiliSenti" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "filisenti_app" "\0"
+            VALUE "InternalName", "FiliSenti" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2026 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "filisenti_app.exe" "\0"
-            VALUE "ProductName", "filisenti_app" "\0"
+            VALUE "OriginalFilename", "FiliSenti.exe" "\0"
+            VALUE "ProductName", "FiliSenti" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
