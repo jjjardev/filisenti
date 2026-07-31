@@ -1,7 +1,9 @@
 # ─── Model artifacts (too large for git; upload to Hugging Face) ───
-/assets/*
-!/assets/README.md
-/model_onnx/
+/model/*
+!/model/README.md
+/model_onnx/*
+!/model_onnx/README.md
+/hugging_face/
 *.onnx
 *.safetensors
 *.pt

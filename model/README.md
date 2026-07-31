@@ -1,15 +1,15 @@
-# `assets/` — model artifacts (not committed to git)
+# `model/` — model artifacts (not committed to git)
 
 This directory is **git-ignored** because the model files are too large to store
 in the repository. They are published on **Hugging Face** instead:
 
-📦 **Model repo (coming soon):** https://huggingface.co/jjjardev/filisenti
+📦 **Model repo:** https://huggingface.co/jjjardev/filisenti
 
 ## Files expected here
 
 | File | Size | Source |
 |---|---|---|
-| `filisenti_int8.onnx` | ~537 MB | INT8 ONNX — download from HF or regenerate with `scripts/quantize_colab_cell.py` |
+| `filisenti_int8.onnx` | ~537 MB | INT8 ONNX — download from HF (`onnx/filisenti_int8.onnx`) or regenerate with `scripts/quantize_colab_cell.py` |
 | `model.safetensors` | ~2.1 GB | FP32 fine-tuned weights (source for re-export) |
 | `tokenizer.json` | ~17 MB | XLM-RoBERTa Unigram SentencePiece tokenizer |
 | `tokenizer_config.json` | 343 B | Tokenizer config |
@@ -21,7 +21,8 @@ in the repository. They are published on **Hugging Face** instead:
 ## How to get them
 
 1. Download `filisenti_int8.onnx` from the Hugging Face model repo above
-   (once published), **or**
+   (`https://huggingface.co/jjjardev/filisenti/resolve/main/onnx/filisenti_int8.onnx`),
+   **or**
 2. Train the model with `scripts/FiliSenti.py`, then quantize with
    `scripts/quantize_colab_cell.py`.
 

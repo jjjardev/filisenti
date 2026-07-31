@@ -77,7 +77,7 @@ fp16:              true (CUDA)     grad_checkpointing: true
 | **FiliSenti model** | **coming soon** — `https://huggingface.co/jjjardev/filisenti` |
 
 > ⚠️ The FP32 safetensors and INT8 ONNX model files are **not yet uploaded** to the Hub.
-> They live locally in `assets/` (git-ignored — see `assets/README.md`). Model card, files,
+> They live locally in `model/` (git-ignored — see `model/README.md`). Model card, files,
 > and metadata will be published at the link above. Once live, the mobile app and demo can
 > pull `filisenti_int8.onnx` directly from there.
 
@@ -99,7 +99,7 @@ filisenti/
 │   ├── transfer_best_to_drive.py # Copy final model to Drive + prune checkpoints
 │   └── prepare_demo.sh           # One-shot setup for the web demo (model + tokenizer)
 │
-├── assets/                       # ⚠️ git-ignored — model artifacts (see assets/README.md)
+├── model/                        # ⚠️ git-ignored — model artifacts (see model/README.md)
 │   ├── README.md                 #   Explains what belongs here + where to download it
 │   ├── filisenti_int8.onnx       #   INT8 ONNX (537 MB)
 │   ├── model.safetensors         #   FP32 original (2.1 GB)
@@ -109,6 +109,9 @@ filisenti/
 │   ├── final_test_confusion_matrix.png
 │   ├── confusion_matrices/       #   28 step-wise confusion-matrix PNGs
 │   └── images/logo.png
+│
+├── model_onnx/                   # ⚠️ git-ignored — demo model dir for app.py (see model_onnx/README.md)
+│   └── README.md                 #   Explains how prepare_demo.sh wires it up
 │
 └── filisenti_app/                # Flutter Android app
     ├── pubspec.yaml
@@ -141,7 +144,7 @@ Runs the INT8 ONNX model in your browser with a full visualization UI (summary d
 
 ```bash
 # One-shot setup: creates venv, installs deps, wires up model_onnx/
-# (uses a local assets/filisenti_int8.onnx if present, otherwise downloads from HF)
+# (uses a local model/filisenti_int8.onnx if present, otherwise downloads from HF)
 ./scripts/prepare_demo.sh
 
 # Run
@@ -223,7 +226,7 @@ adb install build/app/outputs/flutter-apk/app-release.apk
 ## How it works end-to-end
 
 1. **Training** (`scripts/FiliSenti.py`) produces a fine-tuned `xlm-roberta-large` checkpoint → `models/filisenti/`.
-2. **Export/quantize** (`scripts/quantize_colab_cell.py`) converts it to INT8 ONNX → `assets/` (or Drive).
+2. **Export/quantize** (`scripts/quantize_colab_cell.py`) converts it to INT8 ONNX → `model/` (or Drive).
 3. **Flutter app** (`filisenti_app/`):
    - `TokenizerService` runs a **pure-Dart Unigram SentencePiece** tokenizer reading `tokenizer.json` (no native dependency).
    - `InferenceService` wraps `flutter_onnxruntime` (`OrtSession`, 2 intra-op threads, 30 s timeout).

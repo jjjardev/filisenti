@@ -2,7 +2,7 @@
 #
 # Prepare the local web demo (app.py) for a fresh clone:
 #  1. Wires up model_onnx/ (which app.py expects) using the bundled tokenizer
-#  2. Uses the local assets/filisenti_int8.onnx if present, otherwise downloads
+#  2. Uses the local model/filisenti_int8.onnx if present, otherwise downloads
 #     it from Hugging Face
 #
 # Usage:  ./scripts/prepare_demo.sh
@@ -12,8 +12,8 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 MODEL_DIR="$ROOT/model_onnx"
 ONNX_DEST="$MODEL_DIR/filisenti_int8.onnx"
 TOKENIZER_SRC="$ROOT/filisenti_app/assets/tokenizer"
-LOCAL_ONNX="$ROOT/assets/filisenti_int8.onnx"
-HF_URL="https://huggingface.co/jjjardev/filisenti/resolve/main/filisenti_int8.onnx"
+LOCAL_ONNX="$ROOT/model/filisenti_int8.onnx"
+HF_URL="https://huggingface.co/jjjardev/filisenti/resolve/main/onnx/filisenti_int8.onnx"
 
 mkdir -p "$MODEL_DIR"
 
