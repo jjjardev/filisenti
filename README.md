@@ -207,8 +207,8 @@ flutter analyze
 # Build release APK (arm64 only — fastest for this device)
 flutter build apk --release --target-platform android-arm64
 
-# Install on a connected device
-adb install build/app/outputs/flutter-apk/app-release.apk
+# Install on a connected device (APK is named FiliSenti-v<version>.apk)
+adb install build/app/outputs/apk/release/FiliSenti-v1.0.0.apk
 ```
 
 **Download the model** — the 537 MB ONNX is *not* bundled and not in git. Get it from Hugging Face:

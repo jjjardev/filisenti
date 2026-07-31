@@ -39,6 +39,14 @@ android {
             isShrinkResources = false
         }
     }
+
+    applicationVariants.all {
+        val v = versionName ?: "1.0.0"
+        outputs.all {
+            (this as com.android.build.gradle.internal.api.BaseVariantOutputImpl)
+                .outputFileName = "FiliSenti-v${v}.apk"
+        }
+    }
 }
 
 flutter {
