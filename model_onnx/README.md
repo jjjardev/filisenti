@@ -23,4 +23,4 @@ Hugging Face if not found locally, and installs the demo dependencies):
 
 The script uses `model/filisenti_int8.onnx` when present locally, otherwise it
 downloads from:
-`https://huggingface.co/jjjardev/filisenti/resolve/main/onnx/filisenti_int8.onnx`
+`https://huggingface.co/jjjardev/filisenti/resolve/main/filisenti_int8.onnx`

@@ -13,7 +13,7 @@ MODEL_DIR="$ROOT/model_onnx"
 ONNX_DEST="$MODEL_DIR/filisenti_int8.onnx"
 TOKENIZER_SRC="$ROOT/filisenti_app/assets/tokenizer"
 LOCAL_ONNX="$ROOT/model/filisenti_int8.onnx"
-HF_URL="https://huggingface.co/jjjardev/filisenti/resolve/main/onnx/filisenti_int8.onnx"
+HF_URL="https://huggingface.co/jjjardev/filisenti/resolve/main/filisenti_int8.onnx"
 
 mkdir -p "$MODEL_DIR"
 
