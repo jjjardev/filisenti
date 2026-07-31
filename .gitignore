@@ -1,0 +1,45 @@
+# ─── Model artifacts (too large for git; upload to Hugging Face) ───
+/assets/*
+!/assets/README.md
+/model_onnx/
+*.onnx
+*.safetensors
+*.pt
+*.pth
+
+# ─── Python ───
+__pycache__/
+*.py[cod]
+/venv/
+.venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# ─── Training output ───
+/models/
+*.log
+
+# ─── Environment / secrets ───
+.env
+
+# ─── IDE / OS ───
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# ─── Flutter app build artifacts ───
+filisenti_app/build/
+filisenti_app/.dart_tool/
+filisenti_app/.flutter-plugins
+filisenti_app/.flutter-plugins-dependencies
+filisenti_app/android/local.properties
+filisenti_app/android/.gradle/
+filisenti_app/android/app/.cxx/
+filisenti_app/ios/Pods/
+filisenti_app/linux/flutter/ephemeral/
+filisenti_app/macos/Flutter/ephemeral/
+filisenti_app/windows/flutter/ephemeral/
+filisenti_app/.pub-cache/
