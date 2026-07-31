@@ -74,12 +74,11 @@ fp16:              true (CUDA)     grad_checkpointing: true
 | GitHub repo | https://github.com/jjjardev/filisenti |
 | TagaSenti dataset | https://huggingface.co/datasets/jjjardev/tagasenti |
 | HiliSenti dataset | https://huggingface.co/datasets/jjjardev/hilisenti-v1 |
-| **FiliSenti model** | **coming soon** — `https://huggingface.co/jjjardev/filisenti` |
+| **FiliSenti model** | https://huggingface.co/jjjardev/filisenti |
 
-> ⚠️ The FP32 safetensors and INT8 ONNX model files are **not yet uploaded** to the Hub.
-> They live locally in `model/` (git-ignored — see `model/README.md`). Model card, files,
-> and metadata will be published at the link above. Once live, the mobile app and demo can
-> pull `filisenti_int8.onnx` directly from there.
+The model repo hosts the FP32 safetensors (so `AutoModelForSequenceClassification.from_pretrained("jjjardev/filisenti")` works) plus the INT8 ONNX, which the mobile app and demo pull directly: `https://huggingface.co/jjjardev/filisenti/resolve/main/filisenti_int8.onnx`.
+
+**License:** code is Apache-2.0; model weights are [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) (mirrors the TagaSenti/HiliSenti dataset terms).
 
 ---
 
@@ -212,7 +211,7 @@ adb install build/app/outputs/apk/release/FiliSenti-v1.0.0.apk
 ```
 
 **Download the model** — the 537 MB ONNX is *not* bundled and not in git. Get it from Hugging Face:
-`https://huggingface.co/jjjardev/filisenti` → `filisenti_int8.onnx` (once published). Then load it onto the phone:
+`https://huggingface.co/jjjardev/filisenti` → `filisenti_int8.onnx`. Then load it onto the phone:
 
 - **Method A — in-app file picker**: tap *Select .onnx File* on the home screen and choose the downloaded `filisenti_int8.onnx`.
 - **Method B — ADB push**:
