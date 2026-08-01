@@ -17,7 +17,7 @@ Tagalog + Hiligaynon · XLM-RoBERTa-large · on-device INT8 · Flutter + ONNX Ru
 ## Highlights
 
 - **State-of-the-art results**: **0.8915 test F1-macro** — the highest published score for 3-class Filipino sentiment analysis.
-- **Bilingual in one model**: trained on TagaSenti (Tagalog) + HiliSenti (Hiligaynon) = **56,781** labeled sentences.
+- **Bilingual in one model**: trained on TagaSenti (Tagalog) + HiliSenti (Hiligaynon) = **59,023,** labeled sentences.
 - **Runs fully on-device**: INT8-quantized ONNX model (≈537 MB) executed on the phone via ONNX Runtime — no internet needed after the model is placed.
 - **Two frontends**:
   1. **Flutter Android app** (`filisenti_app/`) — production mobile UI with per-sentence color-coded breakdowns, exports, dark mode.
@@ -33,7 +33,7 @@ Tagalog + Hiligaynon · XLM-RoBERTa-large · on-device INT8 · Flutter + ONNX Ru
 | **Base model** | XLM-RoBERTa-large — 355M params, 250K Unigram vocab |
 | **Task** | 3-class text classification: `Negative`, `Neutral`, `Positive` |
 | **Languages** | Tagalog (tl) + Hiligaynon (hil) |
-| **Training data** | TagaSenti 35,686 + HiliSenti 21,095 = **56,781 rows** |
+| **Training data** | TagaSenti 35,686 + HiliSenti 21,095 = **59,023, rows** |
 | **Split** | Stratified 80 / 10 / 10 (train 45,424 · val 5,679 · test 5,678) |
 | **Best val F1-macro** | **0.8895** @ step 5400 (epoch 4.75) |
 | **Test F1-macro** | **0.8915** |
