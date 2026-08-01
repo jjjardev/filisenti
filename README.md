@@ -267,18 +267,7 @@ adb install build/app/outputs/apk/release/FiliSenti-v1.0.0.apk
 - **Why a custom Dart tokenizer?** `dart_sentencepiece_tokenizer` had compatibility issues with the XLM-RoBERTa SentencePiece format.
 - **Why preserve casing?** Filipino social-media sentiment uses uppercase for emphasis; XLM-RoBERTa is a cased model.
 - **Why single-file ONNX?** The app and demo load one `.onnx` path; quantization is isolated in a subprocess to control Colab memory without needing external data files.
-
----
-
-## Next steps
-
-- [ ] Upload FP32 + ONNX model to Hugging Face (`jjjardev/filisenti`) and link it in the README/app docs
-- [ ] Release APK with a proper signing key (currently debug-signed)
-- [ ] Performance benchmark — inference time per sentence on the Tecno Spark 30
-- [ ] Model integrity check (checksum) before loading on-device
-- [ ] App store listing (screenshots, description, privacy policy)
-- [ ] iOS support (Metal/CoreML delegate)
-
+- 
 ---
 
 ## Credits
